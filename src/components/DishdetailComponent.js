@@ -19,10 +19,10 @@ class DishDetail extends Component {
         if (dish != null)
             return(
                 <Card>
-                    <CardImg top src={this.props.selectedDish.image} alt={this.props.selectedDish.name} />
+                    <CardImg top src={this.props.dish.image} alt={this.props.dish.name} />
                     <CardBody>
-                      <CardTitle>{this.props.selectedDish.name}</CardTitle>
-                      <CardText>{this.props.selectedDish.description}</CardText>
+                      <CardTitle>{this.props.dish.name}</CardTitle>
+                      <CardText>{this.props.dish.description}</CardText>
                     </CardBody>
                 </Card>
             );
@@ -44,7 +44,8 @@ class DishDetail extends Component {
                         <div  key={comment.id}>
                             <ul className = "list-unstyled">
                                 <li>{comment.comment}</li>
-                                <li>-- {comment.author}, {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day:'2-digit'}).format(new Date(Date.parse(comment.date)))}</li>
+                                <li>-- {comment.author}, {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', 
+                                day:'2-digit'}).format(new Date(Date.parse(comment.date)))}</li>
                             </ul>
                         </div>
                       );
@@ -63,13 +64,13 @@ class DishDetail extends Component {
         }
         
         return (
-            <div>
+            <div className = "container">
                 <div className="row">
                     <div  className="col-12 col-md-5 m-1">
-                        {this.renderDish(this.props.selectedDish)}
+                        {this.renderDish(this.props.dish)}
                     </div>
-                    <div  className="col-12 col-md-5 m-1">
-                        {renderComments(this.props.selectedDish)}
+                    <div className="col-12 col-md-5 m-1">
+                        {renderComments(this.props.dish)}
                     </div>
                 </div>
             </div>
