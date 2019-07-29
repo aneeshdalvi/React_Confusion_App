@@ -40,7 +40,7 @@ function About(props) {
     if (props.leaders.isLoading) {
         return(
             <div className="container">
-                <div className="row">            
+                <div className="row">
                     <Loading />
                 </div>
             </div>
@@ -49,9 +49,9 @@ function About(props) {
     else if (props.leaders.errMess) {
         return(
             <div className="container">
-                <div className="row"> 
+                <div className="row">
                     <div className="col-12">
-                        <h4>{props.dishes.errMess}</h4>
+                        <h4>{props.leaders.errMess}</h4>
                     </div>
                 </div>
             </div>
@@ -68,7 +68,7 @@ function About(props) {
                     <div className="col-12">
                         <h3>About Us</h3>
                         <hr />
-                    </div>                
+                    </div>
                 </div>
                 <div className="row row-content">
                     <div className="col-12 col-md-6">
@@ -122,4 +122,4 @@ function About(props) {
         );
 }
 
-export default About;    
+export default About;
